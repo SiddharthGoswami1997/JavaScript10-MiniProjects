@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Factorial Calculation</title>
+</head>
+<body>
+  <input type="number" id="data" placeholder="Enter a number">
+  <button onclick="calculateFactorial()">Calculate Factorial</button>
+  <p>Result: <span id="res"></span></p>
+
+  <script>
+    function calculateFactorial() {
+      let number = parseInt(document.getElementById('data').value);
+      let fact = 1;
+
+      function factorial(x) {
+        if (x > number) {
+          return;
+        } else {
+          fact = x * fact;
+          x++;
+          factorial(x);
+        }
+      }
+
+      factorial(1);
+      document.getElementById('res').innerText = fact;
+    }
+  </script>
+</body>
+</html>
